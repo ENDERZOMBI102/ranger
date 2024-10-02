@@ -22,4 +22,4 @@ def get_macros_with_date(self):
 
 
 # Overwrite the old one
-ranger.core.actions.Actions.get_macros = get_macros_with_date
+src.ranger.core.actions.Actions.get_macros = get_macros_with_date

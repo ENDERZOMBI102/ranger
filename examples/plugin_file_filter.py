@@ -7,9 +7,6 @@
 
 from __future__ import (absolute_import, division, print_function)
 
-import ranger.container.directory
-
-
 ACCEPT_FILE_OLD = ranger.container.directory.accept_file
 
 HIDE_FILES = ("/boot", "/sbin", "/proc", "/sys")
@@ -23,4 +20,4 @@ def custom_accept_file(fobj, filters):
 
 
 # Overwrite the old function
-ranger.container.directory.accept_file = custom_accept_file
+src.ranger.container.directory.accept_file = custom_accept_file

@@ -93,11 +93,6 @@ TEST_PATHS_MAIN = \
 	./tests
 TEST_PATH_CONFIG = ./ranger/config
 
-test_pylint:
-	@echo "$(bold)Running pylint...$(normal)"
-	pylint $(TEST_PATHS_MAIN)
-	pylint --rcfile=$(TEST_PATH_CONFIG)/.pylintrc $(TEST_PATH_CONFIG)
-
 test_flake8:
 	@echo "$(bold)Running flake8...$(normal)"
 	flake8 $(TEST_PATHS_MAIN) $(TEST_PATH_CONFIG)
@@ -117,7 +112,7 @@ test_pytest:
 	py.test tests
 	@echo
 
-test_py: test_pylint test_flake8 test_doctest test_pytest test_other
+test_py: test_flake8 test_doctest test_pytest test_other
 	@echo "$(bold)Finished python and documentation tests!$(normal)"
 	@echo
 

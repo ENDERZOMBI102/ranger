@@ -5,7 +5,7 @@ import operator
 from ranger.container.fsobject import FileSystemObject
 
 
-class MockFM(object):  # pylint: disable=too-few-public-methods
+class MockFM:  # pylint: disable=too-few-public-methods
     """Used to fulfill the dependency by FileSystemObject."""
 
     default_linemodes = []

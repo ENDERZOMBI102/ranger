@@ -9,7 +9,6 @@ from __future__ import (absolute_import, division, print_function)
 
 import codecs
 
-import ranger.api
 from ranger.core.linemode import LinemodeBase
 
 

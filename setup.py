@@ -11,8 +11,7 @@ import shutil
 from setuptools import setup
 from setuptools.command.install_lib import install_lib
 
-import ranger
-
+from src import ranger
 
 SCRIPTS_PATH = 'build_scripts'
 EXECUTABLES_PATHS = ['/ranger/data/scope.sh']

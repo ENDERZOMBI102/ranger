@@ -6,9 +6,6 @@
 
 from __future__ import (absolute_import, division, print_function)
 
-import ranger.api
-
-
 HOOK_INIT_OLD = ranger.api.hook_init
 
 

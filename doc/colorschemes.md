@@ -19,19 +19,19 @@ constant `CONTEXT_KEYS`. Custom tags can be specified in a custom plugin file in
 import ranger.gui.context
 
 # Add your key names
-ranger.gui.context.CONTEXT_KEYS.append('my_key')
+src.ranger.gui.context.CONTEXT_KEYS.append( 'my_key' )
 
 # Set it to False (the default value)
-ranger.gui.context.Context.my_key = False
+src.ranger.gui.context.Context.my_key = False
 
 # Or use an array for multiple names
-my_keys = ['key_one', 'key_two']
-ranger.gui.context.CONTEXT_KEYS.append(my_keys)
+my_keys = [ 'key_one', 'key_two' ]
+src.ranger.gui.context.CONTEXT_KEYS.append( my_keys )
 
 # Set them to False
 for key in my_keys:
     code = 'ranger.gui.context.Context.' + key + ' = False'
-    exec(code)
+    exec( code )
 ```
 
 As you may or may not have guessed, this only tells ranger that they exist, not
@@ -44,8 +44,8 @@ First, from above, we'll add the key `readme` and set it to `False`.
 ```python
 import ranger.gui.context
 
-ranger.gui.context.CONTEXT_KEYS.append('readme')
-ranger.gui.context.Context.readme = False
+src.ranger.gui.context.CONTEXT_KEYS.append( 'readme' )
+src.ranger.gui.context.Context.readme = False
 ```
 
 Then we'll use the hook `hook_before_drawing` to tell ranger that our key is
@@ -56,13 +56,15 @@ import ranger.gui.widgets.browsercolumn
 
 OLD_HOOK_BEFORE_DRAWING = ranger.gui.widgets.browsercolumn.hook_before_drawing
 
-def new_hook_before_drawing(fsobject, color_list):
+
+def new_hook_before_drawing( fsobject, color_list ):
     if fsobject.basename === 'README.md':
-        color_list.append('readme')
+        color_list.append( 'readme' )
 
-    return OLD_HOOK_BEFORE_DRAWING(fsobject, color_list)
+    return OLD_HOOK_BEFORE_DRAWING( fsobject, color_list )
 
-ranger.gui.widgets.browsercolumn.hook_before_drawing = new_hook_before_drawing
+
+src.ranger.gui.widgets.browsercolumn.hook_before_drawing = new_hook_before_drawing
 ```
 
 Notice we call the old `hook_before_drawing`. This makes sure that we don't

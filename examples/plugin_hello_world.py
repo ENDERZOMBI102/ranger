@@ -7,7 +7,6 @@ from __future__ import (absolute_import, division, print_function)
 
 # We are going to extend the hook "ranger.api.hook_ready", so first we need
 # to import ranger.api:
-import ranger.api
 
 # Save the previously existing hook, because maybe another module already
 # extended that hook and we don't want to lose it:

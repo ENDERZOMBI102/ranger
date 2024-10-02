@@ -1,6 +1,6 @@
 from __future__ import (absolute_import, division, print_function)
 
-from ranger.container import history
+from ranger import history
 
 
 HISTORY_TEST_ENTRIES = [str(k) for k in range(20)]
@@ -12,7 +12,7 @@ def testhistorybasic():
     # item added to it. It has a `current` index that serves as a cursor.
 
     # A history has a limited size, check that only `maxlen` items are stored
-    hist = history.History(maxlen=10)
+    hist = history.History( maxlen=10 )
     for entry in HISTORY_TEST_ENTRIES:
         hist.add(entry)
 
@@ -70,15 +70,15 @@ def testhistorybasic():
     assert hist.current() == "19"
 
     # we can create an history from another history
-    hist = history.History(maxlen=10)
+    hist = history.History( maxlen=10 )
     for entry in HISTORY_TEST_ENTRIES:
         hist.add(entry)
     # XXX maxlen should not be used to refer to something that isn't a length
-    otherh = history.History(maxlen=hist)
+    otherh = history.History( maxlen=hist )
     assert list(hist) == list(otherh)
 
     # Rebase replaces the past of the history with that of another
-    otherh = history.History(maxlen=hist)
+    otherh = history.History( maxlen=hist )
     old_current_item = hist.current()
     for entry in OTHER_TEST_ENTRIES:
         otherh.add(entry)
@@ -94,7 +94,7 @@ def testhistorybasic():
 
 def testhistoryunique():
     # Check that unique history refuses to store duplicated entries
-    hist = history.History(maxlen=10, unique=True)
+    hist = history.History( maxlen=10, unique=True )
     for entry in HISTORY_TEST_ENTRIES:
         hist.add(entry)
     assert hist.current() == "19"

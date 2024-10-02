@@ -5,7 +5,7 @@ on:
     paths:
       - '.github/workflows/pylint.yml'
       - '**.py'
-      - 'requirements.txt'
+      - '../../dev-requirements.txt'
 
 jobs:
   test_py:

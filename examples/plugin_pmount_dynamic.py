@@ -16,7 +16,6 @@
 from __future__ import (absolute_import, division, print_function)
 
 import subprocess
-import ranger.api
 
 MOUNT_KEY = '<alt>m'
 UMOUNT_KEY = '<alt>M'

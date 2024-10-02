@@ -11,8 +11,6 @@
 
 from __future__ import (absolute_import, division, print_function)
 
-import ranger.api
-
 MOUNT_KEY = '<alt>m'
 UMOUNT_KEY = '<alt>M'
 LIST_MOUNTS_KEY = '<alt>N'
